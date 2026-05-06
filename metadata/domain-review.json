@@ -1,0 +1,73 @@
+{
+  "repo": "ember-move-opening-lab",
+  "language": "Elixir",
+  "category": "Chess and game engines",
+  "goal": "Build an Elixir toolkit that studies opening behavior through negative fixtures, with human-readable error snapshots and synthetic fixtures only.",
+  "review_model": {
+    "terms": [
+      "position pressure",
+      "move ordering",
+      "search width",
+      "endgame risk"
+    ],
+    "lanes": [
+      "ship",
+      "watch",
+      "hold"
+    ],
+    "score": "signal * 2 + slack + confidence - drag * 3",
+    "purpose": "surface the domain-specific cases that need the most careful review"
+  },
+  "cases": [
+    {
+      "name": "baseline",
+      "focus": "position pressure",
+      "signal": 79,
+      "slack": 28,
+      "drag": 19,
+      "confidence": 74,
+      "score": 203,
+      "lane": "ship"
+    },
+    {
+      "name": "stress",
+      "focus": "move ordering",
+      "signal": 47,
+      "slack": 24,
+      "drag": 17,
+      "confidence": 64,
+      "score": 131,
+      "lane": "watch"
+    },
+    {
+      "name": "edge",
+      "focus": "search width",
+      "signal": 82,
+      "slack": 48,
+      "drag": 25,
+      "confidence": 62,
+      "score": 199,
+      "lane": "ship"
+    },
+    {
+      "name": "recovery",
+      "focus": "endgame risk",
+      "signal": 68,
+      "slack": 41,
+      "drag": 19,
+      "confidence": 86,
+      "score": 206,
+      "lane": "ship"
+    },
+    {
+      "name": "stale",
+      "focus": "position pressure",
+      "signal": 54,
+      "slack": 21,
+      "drag": 28,
+      "confidence": 67,
+      "score": 112,
+      "lane": "watch"
+    }
+  ]
+}
